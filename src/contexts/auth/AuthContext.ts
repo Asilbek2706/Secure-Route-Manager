@@ -2,7 +2,8 @@ import { createContext } from "react";
 
 export interface IAuthContext {
     user: any;
-    login: (userData: any) => void;
+    role: "admin" | "user" | null;
+    login: (userData: any, userRole: "admin" | "user") => void;
     logout: () => void;
 }
 

@@ -6,6 +6,7 @@ import Login from "./pages/Login.tsx";
 import Navbar from "./components/Navbar.tsx";
 import AuthProvider from "./contexts/auth/AuthProvider.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
+import Admin from "./components/Admin.tsx";
 
 function App() {
     return (
@@ -13,8 +14,13 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/admin" element={
+                    <ProtectedRoute isAllowed={["admin"]}>
+                        <Admin />
+                    </ProtectedRoute>
+                } />
                 <Route path="/profile" element={
-                    <ProtectedRoute>
+                    <ProtectedRoute isAllowed={["admin", "user"]}>
                         <Profile />
                     </ProtectedRoute>
                 } />

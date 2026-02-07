@@ -9,17 +9,29 @@ const Navbar = () => {
         marginRight: "10px"
     });
 
-    const { user, logout } = useAuth();
+    const { user, role, logout } = useAuth();
 
     return (
         <nav className="navbar">
             <NavLink style={navbarLinkStyles} to='/'>Home</NavLink>
-            {user && <NavLink style={navbarLinkStyles} to='/profile'>Profile</NavLink>}
+
+            {user && (
+                <NavLink style={navbarLinkStyles} to='/profile'>
+                    Profile ({role})
+                </NavLink>
+            )}
+
+            {role === 'admin' && (
+                <NavLink style={navbarLinkStyles} to='/admin'>
+                    Admin Panel
+                </NavLink>
+            )}
+
             {!user ? (
                 <NavLink style={navbarLinkStyles} to='/login'>Login</NavLink>
             ) : (
-                <button
-                    onClick={logout}>Logout ({user})
+                <button onClick={logout}>
+                    Logout ({user})
                 </button>
             )}
         </nav>
