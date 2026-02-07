@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import type { CSSProperties } from "react";
-import { useAuth } from "../contexts/AuthContext.tsx";
+import { useAuth } from "../contexts/auth/useAuth";
 
 const Navbar = () => {
     const navbarLinkStyles = ({ isActive }: { isActive: boolean }): CSSProperties => ({

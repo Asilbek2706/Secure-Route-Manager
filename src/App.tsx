@@ -4,7 +4,7 @@ import Home from "./pages/Home.tsx";
 import Profile from "./pages/Profile.tsx";
 import Login from "./pages/Login.tsx";
 import Navbar from "./components/Navbar.tsx";
-import AuthProvider from "./contexts/AuthContext.tsx";
+import AuthProvider from "./contexts/auth/AuthProvider.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
 
 function App() {

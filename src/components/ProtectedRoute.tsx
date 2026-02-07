@@ -1,4 +1,4 @@
-import {useAuth} from "../contexts/AuthContext.tsx";
+import { useAuth } from "../contexts/auth/useAuth";
 import {Navigate, useLocation} from "react-router-dom";
 import type {ReactNode} from "react";
 
@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const ProtectedRoute = ({children}: IProps) => {
-    const { user} = useAuth()
+    const { user } = useAuth()
     const location = useLocation();
 
     if (!user) {

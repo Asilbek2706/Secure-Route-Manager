@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
-import {useAuth} from "../contexts/AuthContext.tsx";
+import { useAuth } from "../contexts/auth/useAuth";
 
 const Login = () => {
     const [user, setUser] = useState('')
